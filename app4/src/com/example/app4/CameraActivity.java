@@ -120,33 +120,7 @@ public class CameraActivity extends Activity implements LocationListener{
 		});
 	}
 
-	/*
-	 * public void showDialogue2(){ final Dialog dialog = new Dialog(context);
-	 * dialog.setContentView(R.layout.custom); dialog.setTitle("Title...");
-	 * LayoutInflater layoutInflater = LayoutInflater.from(this); View
-	 * promptView = layoutInflater.inflate(R.layout.custom, null);
-	 * 
-	 * final AlertDialog alertD = new AlertDialog.Builder(this).create();
-	 * 
-	 * final EditText userInput = (EditText)
-	 * promptView.findViewById(R.id.userInput);
-	 * 
-	 * Button btnAdd1 = (Button) promptView.findViewById(R.id.btnAdd1);
-	 * 
-	 * Button btnAdd2 = (Button) promptView.findViewById(R.id.btnAdd2);
-	 * 
-	 * btnAdd1.setOnClickListener(new View.OnClickListener() { public void
-	 * onClick(View view) { alertD.cancel(); } });
-	 * btnAdd2.setOnClickListener(new View.OnClickListener() { public void
-	 * onClick(View view) {
-	 * 
-	 * MyApplication.helper.setParent(parentNode.getName()); Intent intent = new
-	 * Intent(context, CameraActivity.class); //intent.putExtra("nodeName",
-	 * userInput.getText().toString()); startActivity(intent); alertD.cancel();
-	 * } });
-	 * 
-	 * alertD.setView(promptView); alertD.show(); }
-	 */
+	
 	public void showDialogue1() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setTitle("Add Leaf Node To Tree");
@@ -194,42 +168,12 @@ public class CameraActivity extends Activity implements LocationListener{
 		MyApplication.helper.setNode(newNode);
 		Intent intent = new Intent(context, DecisionTree.class);
 		startActivity(intent);
-		/*final Dialog dialog = new Dialog(context);
-		dialog.setContentView(R.layout.custom);
-		dialog.setTitle("Title...");
-
-		Button btnAdd1 = (Button) dialog.findViewById(R.id.btnAdd1);
-
-		Button btnAdd2 = (Button) dialog.findViewById(R.id.btnAdd2);
-		// if button is clicked, close the custom dialog
-		btnAdd2.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-
-				Node newNode = new Node("fsdfs", null);
-				newNode.setLeaf(true);
-				//newNode.setImage(bitmap);
-				Toast.makeText(context, "hui;hiulhuilhuildeleted",
-						Toast.LENGTH_SHORT).show();
-
-				MyApplication.helper.setNode(newNode);
-				Intent intent = new Intent(context, MainActivity.class);
-				startActivity(intent);
-				
-
-			}
-		});*/
-
+		
 	}
 
 	 @Override
 	    public void onLocationChanged(Location location) {
-	        /*if (location != null) {
-	        Log.d("LOCATION CHANGED", location.getLatitude() + "");
-	        Log.d("LOCATION CHANGED", location.getLongitude() + "");
-	        Toast.makeText(MainActivity.this,
-	            location.getLatitude() + "" + location.getLongitude(),
-	            Toast.LENGTH_LONG).show();
-	        }*/
+	        
 	    	if (location != null) {
 	           
 	            mLocationManager.removeUpdates(this);
@@ -263,8 +207,7 @@ public class CameraActivity extends Activity implements LocationListener{
 
 	        final Location location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 	        if(location != null && location.getTime() > Calendar.getInstance().getTimeInMillis() - 2 * 60 * 1000) {
-	            // Do something with the recent location fix
-	            //  otherwise wait for the update below
+	            
 	        	mLatitudeText.setText(String.valueOf("Latitude: "+location.getLatitude()));
 	        	mLongitudeText.setText(String.valueOf("Longitude: "+location.getLongitude()));
 	        }

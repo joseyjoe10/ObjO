@@ -30,7 +30,7 @@ public class Helper  {
 			    if (s.getPicName().equalsIgnoreCase(nodeName)){
 			    	return s.getPicName();
 			    }
-			return "its fucking not there!";
+			return "Not Found!";
 	}
 	
 	

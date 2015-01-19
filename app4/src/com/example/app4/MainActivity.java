@@ -131,42 +131,7 @@ public class MainActivity extends Activity {
 
 				deletePressed = true;
 
-				/*
-				 * Node root= new Node("root",null);
-				 * 
-				 * try { serializeTree(root,"someFile.ser"); } catch
-				 * (IOException e) { // TODO Auto-generated catch block
-				 * e.printStackTrace(); }
-				 */
-				/*
-				 * showDialogue(); String m_Text; AlertDialog.Builder builder =
-				 * new AlertDialog.Builder(MainActivity.this);
-				 * builder.setTitle("Add Node");
-				 * 
-				 * // Set up the input final EditText input = new
-				 * EditText(MainActivity.this);
-				 * //input.setTextColor(Color.WHITE); // Specify the type of
-				 * input expected; this, for example, sets the input as a
-				 * password, and will mask the text
-				 * input.setInputType(InputType.TYPE_CLASS_TEXT);
-				 * builder.setView(input);
-				 * 
-				 * // Set up the buttons builder.setPositiveButton("OK", new
-				 * DialogInterface.OnClickListener() {
-				 * 
-				 * @Override public void onClick(DialogInterface dialog, int
-				 * which) { //m_Text = input.getText().toString(); } });
-				 * builder.setNegativeButton("Cancel", new
-				 * DialogInterface.OnClickListener() {
-				 * 
-				 * @Override public void onClick(DialogInterface dialog, int
-				 * which) { dialog.cancel(); } }); builder.create();
-				 * builder.show();
-				 * 
-				 * 
-				 * //Toast.makeText(MainActivity.this, "add clicked",
-				 * Toast.LENGTH_SHORT).show();
-				 */}
+				}
 		});
 
 		Button saveButton = (Button) findViewById(R.id.saveBtn);
@@ -186,92 +151,7 @@ public class MainActivity extends Activity {
 		});
 	}
 
-		/*Button loadTreeBtn = (Button) findViewById(R.id.loadTreeBtn);
-		loadTreeBtn.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-
-				Node root;
-				try {
-					root = deSerializeTree("someFile.ser");
-					if (parentNode == null) {
-						showLevel(root);
-					} else {
-						showLevel(parentNode);
-					}
-					showLevel(root);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-				
-				 * try { Node root =read();
-				 * 
-				 * for (Node node :root.children()) { Button button = new
-				 * Button(MainActivity.this); button.setText(node.getName());
-				 * button.setId(node.hashCode()); final int buttonID =
-				 * button.getId();
-				 * 
-				 * LinearLayout layout = (LinearLayout)
-				 * findViewById(R.id.activity_main); layout.addView(button);
-				 * 
-				 * button.setOnClickListener(new View.OnClickListener() { public
-				 * void onClick(View view) { Toast.makeText(MainActivity.this,
-				 * "Button clicked index = " + buttonID,
-				 * Toast.LENGTH_SHORT).show(); } }); }
-				 * 
-				 * } catch (StreamCorruptedException e1) { // TODO
-				 * Auto-generated catch block e1.printStackTrace(); } catch
-				 * (ClassNotFoundException e1) { // TODO Auto-generated catch
-				 * block e1.printStackTrace(); } catch (IOException e1) { //
-				 * TODO Auto-generated catch block e1.printStackTrace(); }
-				 
-
-			}
-		});
-
-	}*/
-
-	/*
-	 * public String showAlert(){ AlertDialog.Builder alertDialogBuilder = new
-	 * AlertDialog.Builder( context);
-	 * 
-	 * // set title alertDialogBuilder.setTitle("Your Title");
-	 * 
-	 * final EditText input = new EditText(MainActivity.this);
-	 * input.setTextColor(Color.WHITE); // Specify the type of input expected;
-	 * this, for example, sets the input as a password, and will mask the text
-	 * input.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL |
-	 * InputType.TYPE_TEXT_VARIATION_NORMAL); alertDialogBuilder.setView(input);
-	 * // set dialog message alertDialogBuilder
-	 * .setMessage("Click yes to exit!") .setCancelable(false)
-	 * .setPositiveButton("Yes",new DialogInterface.OnClickListener() { public
-	 * void onClick(DialogInterface dialog,int id) { // if this button is
-	 * clicked, close // current activity MainActivity.this.finish(); } })
-	 * .setNegativeButton("No",new DialogInterface.OnClickListener() { public
-	 * void onClick(DialogInterface dialog,int id) { // if this button is
-	 * clicked, just close // the dialog box and do nothing dialog.cancel(); }
-	 * });
-	 * 
-	 * // create alert dialog AlertDialog alertDialog =
-	 * alertDialogBuilder.create();
-	 * 
-	 * // show it alertDialog.show(); return null; }
-	 */
-
-	// Deserialize
-	// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	
-
-
-	
-
-	// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+		
 
 	public void deleteNode(String nodeName) {
 		Node node = root.recursiveSearch(nodeName, root);
@@ -465,44 +345,7 @@ public class MainActivity extends Activity {
 		return directory.getAbsolutePath();
 	}
 
-	/*
-	 * public void addLeaf(final Node node){ AlertDialog.Builder builder = new
-	 * AlertDialog.Builder(MainActivity.this); builder.setTitle("Add Leaf");
-	 * 
-	 * // Set up the input final EditText input = new
-	 * EditText(MainActivity.this);
-	 * 
-	 * // Specify the type of input expected; this, for example, sets the input
-	 * // as a password, and will mask the text
-	 * input.setInputType(InputType.TYPE_CLASS_TEXT); builder.setView(input);
-	 * 
-	 * // Set up the buttons builder.setPositiveButton("OK", new
-	 * DialogInterface.OnClickListener() {
-	 * 
-	 * @Override public void onClick(DialogInterface dialog, int which) { final
-	 * LinearLayout layout1 = (LinearLayout) findViewById(R.id.treeLayout);
-	 * String buttonText; final Button button1 = new Button(context);
-	 * node.setName(input.getText().toString()) ; if (parentNode == null)
-	 * parentNode = root;
-	 * 
-	 * 
-	 * parentNode.addChild(node); Toast.makeText(MainActivity.this,
-	 * parentNode.getName(),Toast.LENGTH_SHORT).show();
-	 * button1.setText(node.getName()); // button1.setId(newNode.hashCode()); n
-	 * += 100; button1.setId(n); buttonText = button1.getText().toString();
-	 * button1.setOnClickListener(new View.OnClickListener() { public void1
-	 * onClick(View view) { layout1.removeAllViews(); ImageView imageview = new
-	 * ImageView(context); imageview.setImageBitmap(node.getImage());
-	 * layout1.addView(imageview); Toast.makeText(MainActivity.this,
-	 * "fuck",Toast.LENGTH_SHORT).show();;
-	 * 
-	 * } }); layout1.addView(button1);
-	 * 
-	 * } });
-	 * 
-	 * 
-	 * }
-	 */
+	
 
 	public void addNode() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -541,7 +384,7 @@ public class MainActivity extends Activity {
 						Button b = (Button) view;
 						String buttonText = b.getText().toString();
 						if (deletePressed == true) {
-							Toast.makeText(MainActivity.this, "fuck",
+							Toast.makeText(MainActivity.this, "error",
 									Toast.LENGTH_SHORT).show();
 							deleteNode(buttonText);
 							ViewGroup layout = (ViewGroup) button1.getParent();

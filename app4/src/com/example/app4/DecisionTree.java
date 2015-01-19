@@ -89,7 +89,7 @@ public class DecisionTree extends ActionBarActivity {
 								
 								//layout1.setContentView(R.layout.custom);
 								currentNode=node1;
-								Toast.makeText(context, "fuck",Toast.LENGTH_SHORT).show();
+								Toast.makeText(context, "error",Toast.LENGTH_SHORT).show();
 								;
 							} else {
 
@@ -135,11 +135,7 @@ public class DecisionTree extends ActionBarActivity {
 	    	
 	    	@SuppressWarnings("unchecked")
 			Node root =(Node) is.readObject();
-	      /*  while(is.readObject()!=null)
-	        {
-	        	root.addChild((Node) is.readObject());
-	        	
-	        }*/
+	      
 	    	
 	    	
 	    	
